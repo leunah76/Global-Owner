@@ -1,0 +1,148 @@
+<% switch (status) {
+  case true: %>
+    <%- include("partials/headerlogin") -%>
+    <% break; %>
+  <% case false: %>
+    <%- include("partials/header") -%>
+    <% break; %>
+  <% default: %>
+    <%- include("partials/header") -%>
+    <% break; %>
+<% } %>
+
+<!-- Second Bar Section -->
+<section class="second-bar">
+  <div class="container">
+    <nav class="navbar navbar-dark my-navbar justify-content-between">
+      <a class="navbar-brand">Country Info</a>
+
+      <form class="form-inline">
+        <a class="nav-link second-menu" href="#"></a>
+        <a class="nav-link second-menu" href="#"></a>
+      </form>
+    </nav>
+    <hr>
+  </div>
+</section>
+
+<!-- Content Section -->
+
+<section class="content">
+  <div class="container">
+
+    <% buysellinfos.forEach(function(buysellinfo){ %>
+
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0 content-big-title">
+            <a data-toggle="collapse" data-target="#<%=buysellinfo.id%>" aria-expanded="true" aria-controls="collapseOne">
+              <%=buysellinfo.country%>
+            </a>
+          </h5>
+        </div>
+
+        <div id="<%=buysellinfo.id%>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <div class="row content-content-row">
+              <h4 class="content-small-title">Property info for Foreigners</h4>
+              <table class="table table-bordered content-property-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Condominiums</th>
+                    <th scope="col">Buyer</th>
+                    <th scope="col">Seller</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Stamp Duty</th>
+                    <td><%=buysellinfo.buyer.stampDuty%></td>
+                    <td>
+                      <% for (var i=0; i < buysellinfo.seller.stampDuty.length; i++) {  %>
+                      <li><%=buysellinfo.seller.stampDuty[i]%></li>
+                      <%  } %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Transfer Tax</th>
+                    <td><%=buysellinfo.buyer.transferTax%></td>
+                    <td><%=buysellinfo.seller.transferTax%></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Legal Fees</th>
+                    <td><%=buysellinfo.buyer.legalFee%></td>
+                    <td><%=buysellinfo.seller.legalFee%></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Agent Fees</th>
+                    <td><%=buysellinfo.buyer.agentFee%></td>
+                    <td><%=buysellinfo.seller.agentFee%></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Rental Income Tax</th>
+                    <td><%=buysellinfo.buyer.rentalTax%></td>
+                    <td><%=buysellinfo.seller.rentalTax%></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Property Tax</th>
+                    <td><%=buysellinfo.buyer.propertyTax%></td>
+                    <td><%=buysellinfo.seller.propertyTax%></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Capital Gains Tax</th>
+                    <td><%=buysellinfo.buyer.cgt%></td>
+                    <td><%=buysellinfo.seller.cgt%></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4 class="content-small-title">Bank Account Info</h4>
+              <table class="table table-bordered content-bank-table">
+                <thead>
+                  <tr>
+                    <th scope="col"><%=buysellinfo.bank.name%></th>
+                    <th scope="col">For Foreigners</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Documents Required for Account Opening</th>
+                    <td>
+                      <% for (var i=0; i < buysellinfo.bank.document.length; i++) {  %>
+                      <li><%=buysellinfo.bank.document[i]%></li>
+                      <%  } %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Minimum Average Daily Balance</th>
+                    <td>
+                      <% for (var i=0; i < buysellinfo.bank.minBalance.length; i++) {  %>
+                      <li><%=buysellinfo.bank.minBalance[i]%></li>
+                      <%  } %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fee</th>
+                    <td>
+                      <% for (var i=0; i < buysellinfo.bank.monthlyFee.length; i++) {  %>
+                      <li><%=buysellinfo.bank.monthlyFee[i]%></li>
+                      <%  } %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</section>
+
+<div class="container">
+  <hr>
+</div>
+
+<%- include("partials/footer") -%>

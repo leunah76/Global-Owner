@@ -1,0 +1,167 @@
+<%- include("partials/headerlogin") -%>
+
+  <!-- Second Bar Section -->
+  <section class="second-bar">
+    <div class="container">
+      <nav class="navbar navbar-dark my-navbar justify-content-between">
+        <a class="navbar-brand">Update Property</a>
+
+        <form class="form-inline">
+          <a class="nav-link second-menu" href="#"></a>
+          <a class="nav-link second-menu" href="/mypage">My property</a>
+        </form>
+      </nav>
+      <hr>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+
+  <section class="content">
+    <form action="/update" method="post">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <div class="row content-content-row">
+              <table class="table table-bordered content-property-table mypage-table">
+                <thead class="mypage-tablehead">
+                  <tr>
+                    <th colspan="1">Property Name</th>
+                    <th colspan="3"><input class="form-control" type="text" value="<%=updateProperty.propertyName%>" name="propertyName"></input></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Country</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.country%>" name="country"></input></td>
+                    <th scope="col">Currency</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.currency%>" name="currency"></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Address</th>
+                    <td colspan="3"><input class="form-control" type="text" value="<%=updateProperty.address%>" name="address"></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Type</th>
+                    <td scope="col">
+                      <select class="form-control" value="<%=updateProperty.type%>" name="type">
+                        <option>apartment</option>
+                        <option>condominium</option>
+                        <option>townhouse</option>
+                        <option>Office</option>
+                        <option>retail</option>
+                        <option>hotel</option>
+                        <option>other</option>
+                      </select>
+                    </td>
+                    <th scope="col">Size</th>
+                    <td scope="col"><input class="form-control" type="number" value="<%=updateProperty.size%>" name="size" min="0" required></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Purchase Date</th>
+                    <td scope="col"><input class="form-control" type="date" value="<%=updateProperty.purchaseDate%>" name="purchaseDate"></input></td>
+                    <th scope="col">Purchase Value</th>
+                    <td scope="col"><input class="form-control" type="number" value="<%=updateProperty.purchaseValue%>" name="purchaseValue" min="0" required></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Registration</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.registration%>" name="registration"></input></td>
+                    <th scope="col">Annual Value</th>
+                    <td scope="col"><input class="form-control" type="number" value="<%=updateProperty.annualValue%>" name="annualValue" min="0" required></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Property Tax</th>
+                    <td scope="col"><input class="form-control" type="number" value="<%=updateProperty.propertyTax%>" name="propertyTax" min="0" required></input></td>
+                    <th scope="col">Occupancy</th>
+                    <td scope="col">
+                      <select class="form-control" value="<%updateProperty.occupancy%>" name="occupancy">
+                        <option>owner occupied</option>
+                        <option>rented</option>
+                        <option>vacant</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-bordered content-property-table mypage-table">
+                <thead class="mypage-smallhead">
+                  <tr>
+                    <th colspan="4">Tenant Info</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.tenantName%>" name="tenantName"></input></td>
+                    <th scope="col">Phone</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.tenantPhone%>" name="tenantPhone"></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Contract Start</th>
+                    <td scope="col"><input class="form-control" type="date" value="<%=updateProperty.contractStart%>" name="contractStart"></input></td>
+                    <th scope="col">Contract End</th>
+                    <td scope="col"><input class="form-control" type="date" value="<%=updateProperty.contractEnd%>" name="contractEnd"></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Rent</th>
+                    <td scope="col"><input class="form-control" type="number" value="<%=updateProperty.rent%>" name="rent" min="0" required></input></td>
+                    <th scope="col">Deposit</th>
+                    <td scope="col"><input class="form-control" type="number" value="<%=updateProperty.deposit%>" name="deposit" min="0" required></input></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-bordered content-property-table mypage-table">
+                <thead class="mypage-smallhead">
+                  <tr>
+                    <th colspan="2">Owner Agency</th>
+                    <th colspan="2">Other Agency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.ownerAgencyName%>" name="ownerAgencyName"></input></td>
+                    <th scope="col">Name</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.otherAgencyName%>" name="otherAgencyName"></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Number</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.ownerAgencyNum%>" name="ownerAgencyNum"></input></td>
+                    <th scope="col">Number</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.otherAgencyNum%>" name="otherAgencyNum"></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Phone</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.ownerAgencyPhone%>" name="ownerAgencyPhone"></input></td>
+                    <th scope="col">Phone</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.otherAgencyPhone%>" name="otherAgencyPhone"></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Agent Name</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.ownerAgentName%>" name="ownerAgentName"></input></td>
+                    <th scope="col">Agent Name</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.otherAgentName%>" name="otherAgentName"></input></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Agent Phone</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.ownerAgentPhone%>" name="ownerAgentPhone"></input></td>
+                    <th scope="col">Agent Phone</th>
+                    <td scope="col"><input class="form-control" type="text" value="<%=updateProperty.otherAgentPhone%>" name="otherAgentPhone"></input></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="update-button-div">
+              <button class="btn btn-light update-button" name="updatebtn" value="<%=updateProperty._id%>" type="submit">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+
+
+  <%- include("partials/footer") -%>

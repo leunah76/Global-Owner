@@ -1,0 +1,46 @@
+<% switch (status) {
+  case true: %>
+    <%- include("partials/headerlogin") -%>
+    <% break; %>
+  <% case false: %>
+    <%- include("partials/header") -%>
+    <% break; %>
+  <% default: %>
+    <%- include("partials/header") -%>
+    <% break; %>
+<% } %>
+
+  <!-- About Section -->
+  <section class="second-bar">
+    <div class="container">
+      <nav class="navbar navbar-dark my-navbar justify-content-between">
+        <a class="navbar-brand">About Us</a>
+
+        <form class="form-inline">
+          <a class="nav-link second-menu" href=""></a>
+          <a class="nav-link second-menu" href=""></a>
+        </form>
+      </nav>
+      <hr>
+      <div class="row about-content-row">
+        <div class="col-lg-4 col-md-4 col-sm-4 about-imagebox">
+          <img class="about-image" src="image/about01.png" alt="about-img">
+          <p class="about-image-discription"><em>Eunah Lee</em></p>
+          <p class=about-image-discription>Web Developer</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm 8 about-textbox">
+          <p><em>"Dreaming of an early retirement, I have thought about how to live a minimalized but a comfortable retired life.
+             And I believe people who are about to retire, would be interested in these things:
+             to have a reliable and safe asset, to live in a nice affordable place, and to travel from time to time.
+             To be able to manage these things effectively, I have developed the <span class="brand">Global Owner</span> website."</em>
+          </p>
+          <p>You can have basic <b>Country Info</b> about the costs involved in buying and selling properties in major South East Asian countries.</p>
+          <p>You can list up all your properties in <b>My Property</b> with infomation that you need to keep, such as property agent or tenant information.</p>
+          <p>You can also have a <b>Selling Scenario</b> to see how much profit you can make by selling your property</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+<%- include("partials/footer") -%>

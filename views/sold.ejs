@@ -1,0 +1,94 @@
+<%- include("partials/headerlogin") -%>
+
+  <!-- Second Bar Section -->
+  <section class="second-bar">
+    <div class="container">
+      <nav class="navbar navbar-dark my-navbar justify-content-between">
+        <a class="navbar-brand">Selling Scenario</a>
+
+        <form class="form-inline">
+          <a class="nav-link second-menu" href="#"></a>
+          <a class="nav-link second-menu" href="/mypage">My Property</a>
+        </form>
+      </nav>
+      <hr>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <%   function formatNumber(num) { %>
+  <%    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') %>
+  <%  } %>
+
+  <section class="content">
+    <form>
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <div class="row content-content-row">
+              <table class="table table-bordered content-property-table mypage-table sell-table">
+                <thead class="mypage-tablehead">
+                  <tr>
+                    <th colspan="3"><%=propertyName%></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Puchase Price</td>
+                    <td scope="col"><%=formatNumber(purchaseValue)%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Selling Price</th>
+                    <td scope="col"><%=formatNumber(sellPrice)%></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-bordered content-property-table mypage-table sell-table">
+                <thead class="mypage-smallhead">
+                  <tr>
+                    <th scope="col">Cost (with avg rates)</th>
+                    <th scope="col">Purchase</th>
+                    <th scope="col">Sell</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Stamp duty</th>
+                    <td scope="col" name="buyerStampDuty"><%=formatNumber(costs[0])%></td>
+                    <td scope="col" name="sellerStampDuty"><%=formatNumber(costs[4])%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Legal fee</th>
+                    <td scope="col" name="buyerLegalFee"><%=formatNumber(costs[1])%></td>
+                    <td scope="col" name="sellerLegalFee"><%=formatNumber(costs[5])%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Agent fee</th>
+                    <td scope="col" name="buyerAgentFee"><%=formatNumber(costs[2])%></td>
+                    <td scope="col" name="sellerAgentFee"><%=formatNumber(costs[6])%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Tax</th>
+                    <td scope="col" name="buyerTax"><%=formatNumber(costs[3])%></td>
+                    <td scope="col" name="sellerTax"><%formatNumber(costs[7])%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Total</th>
+                    <td scope="col"><%=formatNumber(costs[0]+costs[1]+costs[2]+costs[3])%></td>
+                    <td scope="col"><%=formatNumber(costs[4]+costs[5]+costs[6]+costs[7])%></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="profit">
+              <h5>Profit:<%=" " + currency + " "%><span><%=formatNumber(sellPrice-purchaseValue-(costs[0]+costs[1]+costs[2]+costs[3]+costs[4]+costs[5]+costs[6]+costs[7]))%></span></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+
+
+  <%- include("partials/footer") -%>

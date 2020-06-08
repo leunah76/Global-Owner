@@ -1,0 +1,217 @@
+
+body{
+  font-family: "Montserrat";
+}
+.brand {
+  font-family: "Chango";
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: bold;
+}
+
+h1{
+  font-size: 2rem;
+}
+
+hr {
+  border: solid darkgrey 3px;
+  border-bottom: none;
+  margin: 2% auto 2%;
+  }
+
+/* Header Section */
+header {
+  padding: 8% 0 8%;
+  background-image: url('../image/home-img01.jpg');
+  background-position: left top;
+  background-size: cover;
+  color: #FFF;
+}
+
+.container{
+  padding: 0;
+}
+
+.my-navbar{
+  padding: 0.5rem 0;
+}
+.navbar-brand{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Title Section */
+
+.title-row, .about-content-row{
+  padding: 0 0 2%;
+}
+.title-textbox{
+ font-family: "Chango";
+ margin: auto;
+}
+
+.title-imagebox{
+  margin: auto;
+}
+
+.title-image{
+  margin: auto;
+  width: 100%;
+}
+
+/* Second Bar Section */
+.second-bar{
+  padding-top: 1%;
+  color: grey;
+}
+.second-menu{
+  color: grey;
+  font-size: 1.5rem;
+}
+
+.second-menu:hover{
+  color: lightgrey;
+}
+
+/* About Section */
+.about-title, .content-title {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 1rem;
+  color: grey;
+}
+
+.about-content-row {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.about-imagebox{
+  margin: auto;
+  text-align: center;
+}
+
+.about-image-discription{
+  font-family: serif;
+  line-height: 1;
+}
+.about-image{
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.about-textbox{
+  text-align: justify;
+}
+
+/* Country Info Section */
+.content{
+  margin: 5% 0 5%;
+}
+
+.card-header {
+  background-color: teal;
+}
+
+.content-big-title{
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content-big-title:hover {
+  color: hotpink;
+}
+
+.content-small-title {
+  padding-left: 1rem;
+  color: grey;
+}
+
+.content-property-table, .content-bank-table{
+  margin: 1% 2% 3%;
+}
+
+/* Register Section */
+.register {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Add Section */
+.update-button-div {
+  text-align: right;
+}
+.update-button {
+  background-color: teal;
+  color: white;
+  margin-right: 0.5%;
+}
+
+/* Mypage Section */
+.comment-box {
+  margin: 0% 2%;
+  text-align: right;
+  width: 100%;
+}
+.mypage-table {
+  font-size: 1rem;
+  margin: 1% 2%;
+}
+.mypage-tablehead {
+  background-color: teal;
+
+  color: white;
+}
+.mypage-tabletitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+td.mypage-tabletitle {
+      border-right: none;
+}
+.mypage-smallhead {
+  background-color: mintcream;
+}
+.edit-sell-btn {
+    border-right: 0;
+  text-align: right;
+}
+.edit-sell-box {
+  margin: 0 2%;
+}
+
+/* Selling Scenario Section */
+.sell-table td{
+  text-align: right;
+}
+.sell-table th{
+  text-align: left;
+}
+.profit {
+  margin-top: 1%;
+  margin-right: 3%;
+  text-align: right;
+  width: 100%;
+}
+
+/* Footer Section */
+
+#contact{
+  padding: 5% 0 5%;
+  text-align: center;
+}
+
+.email {
+  color: inherit
+}
+.social-icon{
+  margin: 20px 10px;
+}
+
+.copyright{
+  font-family: "Chango";
+  font-size: 1rem;
+}

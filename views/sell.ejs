@@ -1,0 +1,52 @@
+<%- include("partials/headerlogin") -%>
+
+  <!-- Second Bar Section -->
+  <section class="second-bar">
+    <div class="container">
+      <nav class="navbar navbar-dark my-navbar justify-content-between">
+        <a class="navbar-brand">Selling Scenario</a>
+
+        <form class="form-inline">
+          <a class="nav-link second-menu" href="#"></a>
+          <a class="nav-link second-menu" href="/mypage">My Property</a>
+        </form>
+      </nav>
+      <hr>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+
+  <section class="content">
+    <form action="/sell" method="post">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <div class="row content-content-row">
+              <%   function formatNumber(num) { %>
+              <%    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') %>
+              <%  } %>
+              <table class="table table-bordered content-property-table mypage-table">
+                <thead class="mypage-tablehead">
+                  <tr>
+                    <th colspan="4"><%=sellProperty.propertyName%></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="col">Purchase Price</td>
+                    <td class="purchase-price" scope="col"><%=formatNumber(sellProperty.purchaseValue)%></td>
+                    <td scope="col"><input class="form-control" type="text" placeholder="estimated selling price" name="sellPrice"></input></td>
+                    <td scope="col"><button class="btn btn-light update-button" name="sellbtn" value="<%=sellProperty._id%>"  type="submit">Check</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+
+
+  <%- include("partials/footer") -%>

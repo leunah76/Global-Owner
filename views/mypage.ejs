@@ -1,0 +1,156 @@
+<%- include("partials/headerlogin") -%>
+
+<!-- Second Bar Section -->
+<section class="second-bar">
+  <div class="container">
+    <nav class="navbar navbar-dark my-navbar justify-content-between">
+      <a class="navbar-brand">My Property</a>
+
+      <form class="form-inline">
+        <a class="nav-link second-menu" href="#"></a>
+        <a class="nav-link second-menu" href="/add">Add new property</a>
+      </form>
+    </nav>
+    <hr>
+  </div>
+</section>
+
+<!-- Content Section -->
+
+<section class="content">
+  <div class="container">
+    <%   function formatNumber(num) { %>
+    <%    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') %>
+    <%  } %>
+
+    <% myproperties.forEach(function(myproperty){ %>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="row content-content-row">
+              <table class="table table-bordered content-property-table mypage-table">
+                <thead class="mypage-tablehead">
+                  <tr>
+                    <th colspan="2" class="mypage-tabletitle" name="propertyName"><%=myproperty.propertyName%></th>
+                    <form  action="/mypage" method="post">
+                    <th colspan="2" class="edit-sell-btn">
+                      <button class="btn btn-sm btn-light my-2 my-sm-0 ml-2" name="updatebtn" value="<%=myproperty._id%>" type="submit">Update</button>
+                      <button class="btn btn-sm btn-light my-2 my-sm-0 ml-2" name="deletebtn" value="<%=myproperty._id%>" type="submit">Delete</button>
+                      <button class="btn btn-sm btn-light my-2 my-sm-0 ml-2" name="sellbtn" value="<%=myproperty._id%>" type="submit">Sell</button>
+                    </th>
+                    </form>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Address</th>
+                    <td colspan="3"><%=myproperty.address%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Type</th>
+                    <td scope="col"><%=myproperty.type%></td>
+                    <th scope="col">Size</th>
+                    <td scope="col"><%=formatNumber(myproperty.size)+"m²"%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Purchase Date</th>
+                    <td scope="col"><%=myproperty.purchaseDate%></td>
+                    <th scope="col">Purchase Value<%="(" + myproperty.currency + ")"%></th>
+                    <td scope="col"><%=formatNumber(myproperty.purchaseValue)%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Registration</th>
+                    <td scope="col"><%=myproperty.registration%></td>
+                    <th scope="col">Annual Value<%="(" + myproperty.currency + ")"%></th>
+                    <td scope="col"><%=formatNumber(myproperty.annualValue)%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Property Tax</th>
+                    <td scope="col"><%=formatNumber(myproperty.propertyTax)%></td>
+                    <th scope="col">Occupancy</th>
+                    <td scope="col"><%=myproperty.occupancy%></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-bordered content-property-table mypage-table">
+                <thead class="mypage-smallhead">
+                  <tr>
+                    <th colspan="4">Tenant Info</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <td scope="col"><%=myproperty.tenantName%></td>
+                    <th scope="col">Phone</th>
+                    <td scope="col"><%=myproperty.tenantPhone%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Contract Start</th>
+                    <td scope="col"><%=myproperty.contractStart%></td>
+                    <th scope="col">Contract End</th>
+                    <td scope="col"><%=myproperty.contractEnd%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Rent<%="(" + myproperty.currency + ")"%></th>
+                    <td scope="col"><%=formatNumber(myproperty.rent)%></td>
+                    <th scope="col">Deposit<%="(" + myproperty.currency + ")"%></th>
+                    <td scope="col"><%=formatNumber(myproperty.deposit)%></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-bordered content-property-table mypage-table">
+                <thead class="mypage-smallhead">
+                  <tr>
+                    <th colspan="2">Owner Agency</th>
+                    <th colspan="2">Other Agency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <td scope="col"><%=myproperty.ownerAgencyName%></td>
+                    <th scope="col">Name</th>
+                    <td scope="col"><%=myproperty.otherAgencyName%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Number</th>
+                    <td scope="col"><%=myproperty.ownerAgencyNum%></td>
+                    <th scope="col">Number</th>
+                    <td scope="col"><%=myproperty.otherAgencyNum%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Phone</th>
+                    <td scope="col"><%=myproperty.ownerAgencyPhone%></td>
+                    <th scope="col">Phone</th>
+                    <td scope="col"><%=myproperty.otherAgencyPhone%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Agent Name</th>
+                    <td scope="col"><%=myproperty.ownerAgentName%></td>
+                    <th scope="col">Agent Name</th>
+                    <td scope="col"><%=myproperty.otherAgentName%></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Agent Phone</th>
+                    <td scope="col"><%=myproperty.ownerAgentPhone%></td>
+                    <th scope="col">Agent Phone</th>
+                    <td scope="col"><%=myproperty.otherAgentPhone%></td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+         </div>
+     <% }); %>
+  </div>
+</section>
+
+<div class="container">
+  <hr>
+</div>
+
+<%- include("partials/footer") -%>
