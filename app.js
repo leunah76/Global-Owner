@@ -3,7 +3,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const session = require("express-session");
+const session = require("cookie-session");
+//const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 
@@ -15,7 +16,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
   secret: "Thisismylittlesecret",
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie:{secure:true}
 }))
 app.use(passport.initialize());
 app.use(passport.session());
