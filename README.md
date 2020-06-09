@@ -7,16 +7,10 @@ However, investing in properties involves lots of costs such as stamp duties, le
 
 In the Global-Owner app, you can keep record of all these information and also get some basic information on the costs involved in buying and selling properties in major South East Asian countries. You can also have a selling scenario if you wish to sell the property.
 
-I have developed this app as my final project for CS50, and currently the app is only available for few South East Asian countries, however, I hope that someday, there will be a real web app that includes much more countries information from all different continents.
+I have developed this app as my final project for CS50, and currently the app is only available for few South East Asian countries. However, I hope that someday, there will be a real web app that includes much more countries information from all different continents.
 
 ## Built With
-node.js
-express js
-ejs
-passport
-mongoose
-MongoDB Atlas
-And other small libraries or packages
+node.js, express js, ejs, passport, mongoose, MongoDB Atlas, other small libraries and packages.
 
 ## Requirements
 You will need [git](https://git-scm.com/), [node.js](https://nodejs.org/en/), and [npm](https://www.npmjs.com/) installed in your environment.
@@ -51,3 +45,6 @@ Click “Country Info” to see the country information.
 
 ## Live Applicaton
 https://fathomless-caverns-47186.herokuapp.com/
+
+http://globalowner.co/
+
